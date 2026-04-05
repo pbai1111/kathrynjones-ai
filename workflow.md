@@ -1,15 +1,36 @@
-# ProjectBased.AI — Workflow
+# KathrynJones.AI — Workflow
 
 ## Site Map
 
 | Page | File | Category | Status |
 |------|------|----------|--------|
 | Landing | `index.html` | — | Content complete, timeline + skills live |
-| Theater & Immersive Arts | `theater.html` | Leading Teams... | Content complete, videos embedded, Featured In added |
-| Digital Media Agency | `agency.html` | Leading Teams... | Content complete, client logos live |
-| Live Interactive Production | `interactive.html` | Leading Teams... | Content complete, video embedded |
-| AI Video Production & Creative Workflows | `ai-systems.html` | Applied AI | Content complete, flip cards live |
+| Experiential & Interactive Media | `theater.html` | Leading Cross-Functional Teams... | Content complete, videos embedded, Featured In added |
+| Full-Service Agency Leadership | `agency.html` | Leading Cross-Functional Teams... | Content complete, client logos live |
+| Live Production & Audience Engagement | `interactive.html` | Leading Cross-Functional Teams... | Content complete, video embedded |
+| AI Workflow Systems & Creative Operations | `ai-systems.html` | Applied AI. Operationalized. | Content complete, flip cards live |
 | Experiential Knowledge Design | `experiential-knowledge.html` | — | Separate design system (InsatiableMind) — do not touch styling |
+
+---
+
+## Content Positioning
+
+This is the **corporate version** of the site, repositioned from projectbased.ai (arts/culture audience) to kathrynjones.ai (C-suite/enterprise audience).
+
+### Key Framing Shifts
+- "Technology and creativity" → "Technology, media, and enterprise operations"
+- "Bootstrapped" narrative → "Built from the ground up" with direct leadership framing
+- "Arts & culture" emphasis → "Fortune 500, nonprofit, and brand" emphasis
+- Hero tagline: "Technology and creativity, engineered into experiences that resonate."
+- "Applied AI. Early and all-in." → "Applied AI. Operationalized."
+- Poetic/editorial tone → Confident, direct, executive tone
+- "Seeing around corners" → "Identifying what's next and operationalizing it"
+- Skills reordered: AI and strategy capabilities lead; creative execution follows
+- Every page leads with business outcomes, operational scale, or measurable results
+
+### Content Reference
+- `corporate-site-text.md` — Full approved copy for all pages
+- `site-copy.md` — Legacy text from the arts/culture version (for reference only)
 
 ---
 
@@ -24,6 +45,14 @@
 - **Index page:** Static chapter list in hero right column; hamburger nav slides in on scroll past hero
 - **Inner pages (theater, agency, interactive, ai-systems):** Hamburger menu (☰) with semi-transparent plum overlay, current page highlighted
 - **experiential-knowledge.html:** Has its own dark-theme nav — do not modify
+- **Chapter names across all navs:**
+  - 15+ years leading cross-functional teams through media, technology, and organizational change
+    - Experiential & Interactive Media → `theater.html`
+    - Full-Service Agency Leadership → `agency.html`
+    - Live Production & Audience Engagement → `interactive.html`
+  - Applied AI. Operationalized.
+    - AI Workflow Systems & Creative Operations → `ai-systems.html`
+    - AI-Powered Knowledge Systems → `experiential-knowledge.html` (Current Focus)
 
 ### Page Layout Pattern (inner pages)
 - Page header with category label, title (left), and tagline (right) in a 2-column grid
@@ -34,7 +63,7 @@
 ### Index Page Layout
 - Hero: name + gradient differentiator (left), chapter navigation (right), bouncing chevron scroll hint
 - Timeline: alternating left/right entries (2007–2026) with milestone markers, staggered fade-in animations
-- Skills block: hover-to-plum skill tags
+- Skills block: hover-to-plum skill tags (AI & strategy skills lead)
 - Contact bar
 
 ### Fonts
@@ -44,7 +73,7 @@
 ### Color System
 - **Light theme:** Background `#FAFAF8`, text `#1a1a1a`, accent plum `#5A2650`
 - **Dark theme (experiential-knowledge):** Background `#070707`, text `#e8e4df`, accents gold `#c9a96e` + blue `#7a9bb5`
-- **Key styling patterns:** Client names in plum, tagline `<em>` bold+italic+plum, section headers bold plum
+- **Key styling patterns:** Client names in plum, section headers bold plum
 
 ---
 
@@ -62,11 +91,19 @@
 - [x] Chapter numbers removed across all pages and menus
 - [x] Front page: gray-to-plum gradient on differentiator, timeline (2007–2026), skills block
 - [x] Section headers restyled (plum, bold, optically balanced)
-- [x] "Featured In" press rows on theater (ABC, CNN, Streaming Media, The Verge) and agency (Fast Company, AdWeek, LA Times, Boston Globe)
+- [x] "Featured In" press rows on theater (ABC, CNN, Streaming Media, The Verge, New York Times, Wall Street Journal) and agency (Fast Company, AdWeek, LA Times, Boston Globe)
 - [x] Client names and capabilities styled in plum for quick scanning
 - [x] Scroll hint: bouncing chevron, hero at 88vh for timeline peek
-- [x] `site-copy.md` — all visible text extracted for review
+- [x] `corporate-site-text.md` — all approved corporate copy documented
 - [x] Git repo on GitHub, pushed to main
+- [x] Full copy repositioning from arts/culture to corporate audience
+- [x] All nav overlays updated with corporate chapter names across every page
+- [x] Timeline entries rewritten with operational/enterprise framing
+- [x] Skills list reordered — AI & strategy capabilities lead
+- [x] Theater page reframed as "Experiential & Interactive Media" with enterprise clients elevated
+- [x] Agency page reframed as "Full-Service Agency Leadership" with P&L and scale emphasis
+- [x] Interactive page reframed as "Live Production & Audience Engagement" with operational design framing
+- [x] AI systems page reframed as "AI Workflow Systems & Creative Operations"
 
 ---
 
@@ -93,19 +130,19 @@
 ## Deployment
 
 ### Current Setup
-- Git repo: `https://github.com/pbai1111/ProjectBasedAI.git`
+- Git repo: kathrynjones-ai
 - Branch: `main`
 - Static HTML — no build step, no framework
 
 ### Vercel Deployment
 - Go to [vercel.com](https://vercel.com) → New Project → Import Git Repository
-- Select the `ProjectBasedAI` repo
+- Select the repo
 - Framework preset: **Other** (static HTML, no build step)
 - Output directory: `.` (root)
 - Deploy
 
 ### Custom Domain
-- In Vercel project settings → Domains → Add `projectbased.ai`
+- Add `kathrynjones.ai` in Vercel project settings → Domains
 - Update DNS records as Vercel instructs
 
 ---
@@ -116,4 +153,6 @@
 - Page 5 has scroll-triggered reveal animations (JavaScript at bottom of file).
 - Index page has scroll-triggered nav (JavaScript at bottom of file).
 - Site is fully static — no server, no framework, no dependencies beyond Google Fonts.
-- `site-copy.md` contains all visible text from all pages (except experiential-knowledge) for content review.
+- `corporate-site-text.md` contains all approved corporate copy for all pages.
+- `site-copy.md` contains legacy arts/culture copy for reference only.
+- **Essence Festival entries** credit Wide Angle Productions — Kathryn facilitated, not led, these productions.
