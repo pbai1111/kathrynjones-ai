@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProjectBased.AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* =================== HERO =================== */
+  .hero {
+    min-height: 88vh;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    padding: 6vh 6vw;
+    position: relative;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 6vw;
+  }
+
+  .name {
+    font-weight: 400;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    letter-spacing: -0.02em;
+    color: #9a9a9a;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+  }
+
+  .name span { display: block; }
+
+  .differentiator {
+    font-weight: 700;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1.15;
+    margin-bottom: 2.2rem;
+    max-width: 600px;
+    letter-spacing: -0.03em;
+    background: linear-gradient(to bottom, #7a7a7a 0%, #3a3a3a 40%, var(--plum) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding-bottom: 0.1em;
+  }
+
+  .throughline {
+    font-weight: 300;
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+    line-height: 1.8;
+    color: var(--text-muted);
+    max-width: 460px;
+  }
+
+  .throughline .ai-first {
+    color: var(--text-mid);
+    font-weight: 400;
+  }
+
+  /* Right column */
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 4vw;
+    border-left: 2px solid var(--plum);
+  }
+
+  .section-header {
+    font-weight: 800;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.6;
+    color: var(--plum);
+    margin-bottom: 1.2rem;
+  }
+
+  .section-header-ai {
+    font-weight: 800;
+    font-size: 0.88rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.6;
+    color: var(--plum);
+    margin-top: 2.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .chapter-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chapter-item {
+    position: relative;
+    padding: 1.1rem 1.2rem;
+    margin-left: -1.2rem;
+    margin-right: -1.2rem;
+    border-bottom: 1px solid var(--border-faint);
+    cursor: pointer;
+    transition: all 0.35s ease;
+    border-radius: 4px;
+  }
+
+  .chapter-number {
+    font-weight: 300;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    margin-bottom: 0.3rem;
+    transition: color 0.35s ease;
+  }
+
+  .chapter-title {
+    font-weight: 400;
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+    color: var(--text-muted);
+    transition: all 0.35s ease;
+    letter-spacing: -0.01em;
+  }
+
+  .chapter-item:hover {
+    background: var(--plum-light);
+  }
+
+  .chapter-item:hover .chapter-title {
+    color: var(--text);
+  }
+
+  .chapter-item:hover .chapter-number {
+    color: var(--plum);
+  }
+
+  .chapter-item::after {
+    content: '→';
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: var(--plum);
+    opacity: 0.35;
+    transition: all 0.35s ease;
+  }
+
+  .chapter-item:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(4px);
+  }
+
+  /* AI section items */
+  .chapter-list-ai .chapter-item:hover .chapter-title {
+    color: var(--text);
+  }
+
+  /* Chapter 05 — the future */
+  .chapter-item.future {
+    border-bottom: none;
+    background: linear-gradient(135deg, rgba(90,38,80,0.05) 0%, rgba(110,51,99,0.03) 100%);
+    margin-top: 0.3rem;
+  }
+
+  .chapter-item.future .chapter-title {
+    color: var(--plum);
+    font-weight: 400;
+  }
+
+  .chapter-item.future .future-tag {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 0.52rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--plum-bright);
+    background: rgba(90,38,80,0.08);
+    padding: 0.2rem 0.55rem;
+    border-radius: 2px;
+    margin-left: 0.7rem;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+
+  .chapter-item.future:hover {
+    background: linear-gradient(135deg, rgba(90,38,80,0.1) 0%, rgba(110,51,99,0.06) 100%);
+    border-left-color: var(--plum-bright);
+  }
+
+  .chapter-item.future:hover .chapter-title {
+    color: var(--plum-hover);
+  }
+
+  /* =================== TIMELINE =================== */
+  .timeline-header {
+    padding: 10vh 6vw 4vh;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .timeline-title {
+    font-weight: 700;
+    font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+    letter-spacing: -0.02em;
+    color: var(--text);
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+  }
+
+  .timeline-subtitle {
+    font-weight: 300;
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    line-height: 1.8;
+    color: var(--text-muted);
+    max-width: 560px;
+    margin: 0 auto;
+    font-style: italic;
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 6vh auto;
+    padding: 0 6vw;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--plum) 5%, var(--plum) 95%, transparent);
+    transform: translateX(-50%);
+  }
+
+  .tl-entry {
+    position: relative;
+    width: 50%;
+    padding: 0 3rem 4rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.6s ease forwards;
+  }
+
+  .tl-entry:nth-child(1) { animation-delay: 0.1s; }
+  .tl-entry:nth-child(2) { animation-delay: 0.2s; }
+  .tl-entry:nth-child(3) { animation-delay: 0.3s; }
+  .tl-entry:nth-child(4) { animation-delay: 0.4s; }
+  .tl-entry:nth-child(5) { animation-delay: 0.5s; }
+  .tl-entry:nth-child(6) { animation-delay: 0.6s; }
+  .tl-entry:nth-child(7) { animation-delay: 0.7s; }
+  .tl-entry:nth-child(8) { animation-delay: 0.8s; }
+  .tl-entry:nth-child(9) { animation-delay: 0.9s; }
+  .tl-entry:nth-child(10) { animation-delay: 1.0s; }
+  .tl-entry:nth-child(11) { animation-delay: 1.1s; }
+  .tl-entry:nth-child(12) { animation-delay: 1.2s; }
+  .tl-entry:nth-child(13) { animation-delay: 1.3s; }
+  .tl-entry:nth-child(14) { animation-delay: 1.4s; }
+  .tl-entry:nth-child(15) { animation-delay: 1.5s; }
+
+  @keyframes fadeIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .tl-left {
+    left: 0;
+    text-align: right;
+    padding-right: 3rem;
+    padding-left: 0;
+  }
+
+  .tl-right {
+    left: 50%;
+    text-align: left;
+    padding-left: 3rem;
+    padding-right: 0;
+  }
+
+  .tl-entry::before {
+    content: '';
+    position: absolute;
+    top: 0.35rem;
+    width: 12px;
+    height: 12px;
+    background: var(--bg);
+    border: 2px solid var(--plum);
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .tl-left::before { right: -6px; }
+  .tl-right::before { left: -6px; }
+
+  .tl-entry.milestone::before {
+    background: var(--plum);
+    width: 14px;
+    height: 14px;
+  }
+
+  .tl-left.milestone::before { right: -7px; }
+  .tl-right.milestone::before { left: -7px; }
+
+  .tl-year {
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    color: var(--plum);
+    margin-bottom: 0.5rem;
+  }
+
+  .tl-headline {
+    font-weight: 600;
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+    color: var(--text);
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .tl-desc {
+    font-weight: 300;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  .tl-desc .highlight {
+    color: var(--text-mid);
+    font-weight: 400;
+  }
+
+  .tl-entry.pandemic .tl-desc {
+    color: var(--text-mid);
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .skills-section {
+    max-width: 800px;
+    margin: 4vh auto 10vh;
+    padding: 0 6vw;
+  }
+
+  .skills-block {
+    border-top: 2px solid var(--plum);
+    padding-top: 2.5rem;
+    text-align: center;
+  }
+
+  .skills-label {
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--plum);
+    margin-bottom: 1.5rem;
+  }
+
+  .skills-list {
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 2.2;
+    color: var(--text-muted);
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .skills-list .separator {
+    color: rgba(90,38,80,0.25);
+    margin: 0 0.3rem;
+  }
+
+  .skills-list .skill {
+    display: inline;
+    transition: color 0.3s ease;
+  }
+
+  .skills-list .skill:hover {
+    color: var(--plum);
+  }
+
+  /* =================== SCROLL HINT =================== */
+  .scroll-hint {
+    position: absolute;
+    bottom: 3vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: bounce 2s ease-in-out infinite;
+    z-index: 1;
+  }
+
+  .scroll-hint .chevron {
+    width: 14px;
+    height: 14px;
+    border-right: 2px solid var(--plum);
+    border-bottom: 2px solid var(--plum);
+    transform: rotate(45deg);
+    opacity: 0.5;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* =================== RESPONSIVE =================== */
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 5vh;
+      padding: 10vh 7vw 6vh;
+    }
+    .hero-left { padding-right: 0; }
+    .hero-right {
+      border-left: none;
+      padding-left: 0;
+      border-top: 2px solid var(--plum);
+      padding-top: 4vh;
+    }
+    .timeline::before {
+      left: 20px;
+    }
+    .tl-entry {
+      width: 100%;
+      padding-left: 3.5rem;
+      padding-right: 0;
+      text-align: left;
+    }
+    .tl-left {
+      left: 0;
+      text-align: left;
+      padding-right: 0;
+      padding-left: 3.5rem;
+    }
+    .tl-right {
+      left: 0;
+      padding-left: 3.5rem;
+    }
+    .tl-left::before,
+    .tl-right::before {
+      left: 14px;
+      right: auto;
+    }
+    .tl-left.milestone::before,
+    .tl-right.milestone::before {
+      left: 13px;
+      right: auto;
+    }
+    .chapter-item {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .chapter-item.future {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  /* =================== SCROLL NAV =================== */
+  .scroll-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.5rem 6vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(250,250,248,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-faint);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .scroll-nav.visible {
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+  <nav class="scroll-nav" id="scrollNav">
+    <a href="index.html" class="nav-back" style="color:var(--plum); font-weight:600; font-size:0.9rem; letter-spacing:-0.01em;">Kathryn Jones</a>
+    <button class="nav-hamburger" onclick="document.getElementById('navOverlay').classList.add('open')" aria-label="Open menu">☰</button>
+  </nav>
+
+  <div class="nav-overlay" id="navOverlay">
+    <div class="nav-overlay-header">
+      <button class="nav-overlay-close" onclick="document.getElementById('navOverlay').classList.remove('open')" aria-label="Close menu">✕</button>
+    </div>
+    <div class="nav-overlay-content">
+      <p class="section-header" style="color:rgba(255,255,255,0.5);">15+ years leading teams at the intersection of technology and creativity</p>
+      <ul class="chapter-list">
+        <li class="chapter-item"><a href="theater.html"><div class="chapter-title">Theater & Immersive Arts</div></a></li>
+        <li class="chapter-item"><a href="agency.html"><div class="chapter-title">Digital Media Agency</div></a></li>
+        <li class="chapter-item"><a href="interactive.html"><div class="chapter-title">Live Interactive Production</div></a></li>
+      </ul>
+      <p class="section-header-ai" style="color:rgba(255,255,255,0.5);">Applied AI. Early and all-in.</p>
+      <ul class="chapter-list">
+        <li class="chapter-item"><a href="ai-systems.html"><div class="chapter-title">AI Video Production & Creative Workflows</div></a></li>
+        <li class="chapter-item"><a href="experiential-knowledge.html"><div class="chapter-title">Experiential Knowledge Design</div></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-left">
+      <h1 class="name">
+        <span>Kathryn</span>
+        <span>Jones</span>
+      </h1>
+      <p class="differentiator">AI surfaces the connections.<br>Humans experience the meaning.</p>
+    </div>
+
+    <div class="hero-right">
+
+      <p class="section-header">15+ years leading teams at the intersection of technology and creativity</p>
+      <ul class="chapter-list">
+        <li class="chapter-item">
+          <div class="chapter-title"><a href="theater.html" style="color:inherit;text-decoration:none">Theater & Immersive Arts</a></div>
+        </li>
+        <li class="chapter-item">
+          <div class="chapter-title"><a href="agency.html" style="color:inherit;text-decoration:none">Digital Media Agency</a></div>
+        </li>
+        <li class="chapter-item">
+          <div class="chapter-title"><a href="interactive.html" style="color:inherit;text-decoration:none">Live Interactive Production</a></div>
+        </li>
+      </ul>
+
+      <p class="section-header-ai">Applied AI. Early and all-in.</p>
+      <ul class="chapter-list chapter-list-ai">
+        <li class="chapter-item">
+          <div class="chapter-title"><a href="ai-systems.html" style="color:inherit;text-decoration:none">Video Production & Creative Workflows</a></div>
+        </li>
+        <li class="chapter-item future">
+          <div class="chapter-title"><a href="experiential-knowledge.html" style="color:inherit;text-decoration:none">Experiential Knowledge Design <span class="future-tag">Current Focus</span></a></div>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="scroll-hint">
+      <div class="chevron"></div>
+    </div>
+  </section>
+
+  <section class="timeline-header">
+    <h2 class="timeline-title">A history of seeing around corners — then jumping in and getting my hands dirty</h2>
+    <p class="timeline-subtitle">Every project below was bootstrapped. No funding. No investors. No safety net. Just the next skill I needed to learn, and the willingness to learn it.</p>
+  </section>
+
+  <div class="timeline">
+
+    <div class="tl-entry tl-left milestone">
+      <div class="tl-year">2007</div>
+      <div class="tl-headline">"35" — The first live-streamed web series</div>
+      <div class="tl-desc">Livestream platforms had just launched. I saw immediately that this would transform the performing arts. So I created "35" — the first interactive multi-cam livestreamed web series. Covered by the <span class="highlight">New York Times, Wall Street Journal</span>, and blogs worldwide. Written by Sharr White.</div>
+    </div>
+
+    <div class="tl-entry tl-right">
+      <div class="tl-year">2008</div>
+      <div class="tl-headline">First live web-based political telethon</div>
+      <div class="tl-desc">17,000+ viewers, trending on Twitter. Before anyone had a playbook for this.</div>
+    </div>
+
+    <div class="tl-entry tl-left">
+      <div class="tl-year">2008</div>
+      <div class="tl-headline">Learned the business of online video</div>
+      <div class="tl-desc">Took a job at an early branded video startup to understand <span class="highlight">economics, marketing, and monetization</span> from the inside.</div>
+    </div>
+
+    <div class="tl-entry tl-right">
+      <div class="tl-year">2011</div>
+      <div class="tl-headline">"Better Left Unsaid" — First interactive live-streamed play</div>
+      <div class="tl-desc"><span class="highlight">Written by Joey Brenneman. 50,000 consecutive viewers.</span></div>
+    </div>
+
+    <div class="tl-entry tl-left milestone">
+      <div class="tl-year">2012</div>
+      <div class="tl-headline">Founded VirtualArtsTV</div>
+      <div class="tl-desc">Co-founded with Joey Brenneman and Erin Bigelow. The first company dedicated to live-streaming the performing arts with real-time audience interaction.</div>
+    </div>
+
+    <div class="tl-entry tl-right">
+      <div class="tl-year">2013</div>
+      <div class="tl-headline">WiredArts Fest - Interactive Arts Festival</div>
+      <div class="tl-desc">VirtualArtsTV produced the first interactive live-streamed performing arts festival, with a companion app and website. 13 companies spanning theater, dance, and music. Covered by <span class="highlight">ABC, CNN and worldwide</span></div>
+    </div>
+
+    <div class="tl-entry tl-left">
+      <div class="tl-year">2013–2016</div>
+      <div class="tl-headline">100+ Interactive Livestreams. Theater. Dance. Music. Celebrities. Hackathons.</div>
+      <div class="tl-desc">Produced and/or directed 100+ interactive livestreams for <span class="highlight">Apple, BMW, Amazon, DC Comics, Kickstarter</span> — alongside dozens of performing arts companies and artists.</div>
+    </div>
+
+    <div class="tl-entry tl-right milestone">
+      <div class="tl-year">2016</div>
+      <div class="tl-headline">Founded Collective Agency</div>
+      <div class="tl-desc">A team of creatives from across the US bringing every creative and technical tool we had to organizations whose missions mattered more than their budgets. <span class="highlight">400+ creatives. Fortune 500 clients. Campaigns that raised millions.</span></div>
+    </div>
+
+    <div class="tl-entry tl-left pandemic">
+      <div class="tl-year">2020</div>
+      <div class="tl-headline">The world discovered virtual events</div>
+      <div class="tl-desc">We'd been doing them for 13 years.</div>
+    </div>
+
+    <div class="tl-entry tl-right">
+      <div class="tl-year">2020</div>
+      <div class="tl-headline">Gaming software meets nonprofit fundraising</div>
+      <div class="tl-desc">Brought gaming engagement software into professional multi-camera productions — <span class="highlight">Biden Victory Fund,  MDA, ERA Coalition</span>. Turned passive audiences into active communities. They raised millions.</div>
+    </div>
+
+    <div class="tl-entry tl-left">
+      <div class="tl-year">2021–2025</div>
+      <div class="tl-headline">Essence Festival of Culture</div>
+      <div class="tl-desc"><span class="highlight">173 multi-camera livestreams</span> over three days across multiple stages. Four consecutive years with Wide Angle Productions.</div>
+    </div>
+
+    <div class="tl-entry tl-right milestone">
+      <div class="tl-year">2024</div>
+      <div class="tl-headline">MIT — Certificate in Applied Generative AI</div>
+      <div class="tl-desc">Formalized what I'd been doing for years. Began building AI workflow systems, automation pipelines, and knowledge tools.</div>
+    </div>
+
+    <div class="tl-entry tl-left">
+      <div class="tl-year">2024</div>
+      <div class="tl-headline">TCS New York City Marathon / NYRR</div>
+      <div class="tl-desc">Built AI-powered podcast analytics, transcript search engines, and production systems for <span class="highlight">one of the world's largest sporting events</span>.</div>
+    </div>
+
+    <div class="tl-entry tl-right">
+      <div class="tl-year">2025</div>
+      <div class="tl-headline">AI workflows for everything</div>
+      <div class="tl-desc">Built AI systems for <span class="highlight">analytics, operations, and content creation</span> — collapsing days of manual work into minutes across every domain I touched.</div>
+    </div>
+
+    <div class="tl-entry tl-left milestone">
+      <div class="tl-year">2026</div>
+      <div class="tl-headline">Experiential Knowledge Design</div>
+      <div class="tl-desc">Built PKES: a full-stack AI knowledge platform. Proof of concept was a fully automated <span class="highlight">75-minute museum audio tour at the Metropolitan Museum of Art</span>. The culmination of two decades of work.</div>
+    </div>
+
+  </div>
+
+  <section class="skills-section">
+    <div class="skills-block">
+      <p class="skills-label">Skills I taught myself along the way</p>
+      <div class="skills-list">
+        <span class="skill">Creative Direction</span><span class="separator">·</span>
+        <span class="skill">Brand Storytelling</span><span class="separator">·</span>
+        <span class="skill">Narrative Development</span><span class="separator">·</span>
+        <span class="skill">Immersive Storytelling</span><span class="separator">·</span>
+        <span class="skill">Event Design</span><span class="separator">·</span>
+        <span class="skill">Interactive Experience Design</span><span class="separator">·</span>
+        <span class="skill">Livestream Direction</span><span class="separator">·</span>
+        <span class="skill">Live Broadcast Production</span><span class="separator">·</span>
+        <span class="skill">Multi-Camera Production</span><span class="separator">·</span>
+        <span class="skill">Video Editing</span><span class="separator">·</span>
+        <span class="skill">Podcast Production</span><span class="separator">·</span>
+        <span class="skill">Streaming Infrastructure</span><span class="separator">·</span>
+        <span class="skill">Graphic Design</span><span class="separator">·</span>
+        <span class="skill">Photoshop</span><span class="separator">·</span>
+        <span class="skill">Premiere</span><span class="separator">·</span>
+        <span class="skill">Web Development</span><span class="separator">·</span>
+        <span class="skill">HTML</span><span class="separator">·</span>
+        <span class="skill">CSS</span><span class="separator">·</span>
+        <span class="skill">WordPress</span><span class="separator">·</span>
+        <span class="skill">Content Strategy</span><span class="separator">·</span>
+        <span class="skill">Digital Marketing</span><span class="separator">·</span>
+        <span class="skill">Social Marketing</span><span class="separator">·</span>
+        <span class="skill">Audience Development</span><span class="separator">·</span>
+        <span class="skill">Community Building</span><span class="separator">·</span>
+        <span class="skill">Campaign Strategy & Execution</span><span class="separator">·</span>
+        <span class="skill">Communications</span><span class="separator">·</span>
+        <span class="skill">Distribution</span><span class="separator">·</span>
+        <span class="skill">Business Development</span><span class="separator">·</span>
+        <span class="skill">Client Management</span><span class="separator">·</span>
+        <span class="skill">Team Leadership</span><span class="separator">·</span>
+        <span class="skill">Budget Oversight</span><span class="separator">·</span>
+        <span class="skill">Bookkeeping</span><span class="separator">·</span>
+        <span class="skill">Fundraising Strategy</span><span class="separator">·</span>
+        <span class="skill">Workflow Optimization</span><span class="separator">·</span>
+        <span class="skill">Data Analytics</span><span class="separator">·</span>
+        <span class="skill">Python</span><span class="separator">·</span>
+        <span class="skill">Flask</span><span class="separator">·</span>
+        <span class="skill">API Integration</span><span class="separator">·</span>
+        <span class="skill">Make.com</span><span class="separator">·</span>
+        <span class="skill">Prompt Engineering</span><span class="separator">·</span>
+        <span class="skill">LLM Integration</span><span class="separator">·</span>
+        <span class="skill">Generative AI</span><span class="separator">·</span>
+        <span class="skill">AI Workflow Automation</span><span class="separator">·</span>
+        <span class="skill">Systems Architecture</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact-bar">
+    <a href="mailto:kathryn@projectbased.ai">kathryn@projectbased.ai</a>
+    <p style="margin-top: 1.5rem; font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.08em;">&copy; <script>document.write(new Date().getFullYear())</script> Kathryn Jones</p>
+  </div>
+
+  <script>
+    const scrollNav = document.getElementById('scrollNav');
+    const hero = document.querySelector('.hero');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > hero.offsetHeight * 0.8) {
+        scrollNav.classList.add('visible');
+      } else {
+        scrollNav.classList.remove('visible');
+      }
+    });
+  </script>
+
+</body>
+</html>

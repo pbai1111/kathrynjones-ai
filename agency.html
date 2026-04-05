@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Media Agency — Kathryn Jones</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* agency.html — page-specific override */
+  .col-right { padding-top: 0.5rem; }
+</style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-back">← Home</a>
+    <button class="nav-hamburger" onclick="document.getElementById('navOverlay').classList.add('open')" aria-label="Open menu">☰</button>
+  </nav>
+
+  <div class="nav-overlay" id="navOverlay">
+    <div class="nav-overlay-header">
+      <button class="nav-overlay-close" onclick="document.getElementById('navOverlay').classList.remove('open')" aria-label="Close menu">✕</button>
+    </div>
+    <div class="nav-overlay-content">
+      <p class="section-header">15+ years leading teams at the intersection of technology and creativity</p>
+      <ul class="chapter-list">
+        <li class="chapter-item"><a href="theater.html"><div class="chapter-title">Theater & Immersive Arts</div></a></li>
+        <li class="chapter-item active"><a href="agency.html"><div class="chapter-title">Digital Media Agency</div></a></li>
+        <li class="chapter-item"><a href="interactive.html"><div class="chapter-title">Live Interactive Production</div></a></li>
+      </ul>
+      <p class="section-header-ai">Applied AI. Early and all-in.</p>
+      <ul class="chapter-list">
+        <li class="chapter-item"><a href="ai-systems.html"><div class="chapter-title">AI Video Production & Creative Workflows</div></a></li>
+        <li class="chapter-item"><a href="experiential-knowledge.html"><div class="chapter-title">Experiential Knowledge Design</div></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="page-header" style="max-width:none;">
+    <p class="page-chapter">Leading Teams at the Intersection of Technology and Creativity</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:5vw; align-items:start;">
+      <h1 class="page-title">Digital Media Agency</h1>
+      <p class="throughline-text" style="margin-bottom:0; max-width:none;">A team of creatives from across the US bringing <em>every creative and technical tool we had</em> to organizations whose missions mattered more than their budgets.</p>
+    </div>
+  </section>
+
+  <section class="two-col">
+    <div class="col-left">
+      <div class="capabilities-block" style="border-top:none; padding-top:0; margin-bottom:2.5rem;">
+        <p class="capabilities-label">Capabilities</p>
+        <div class="capabilities-list">
+          <span>Custom Video Production</span><span class="separator">·</span>
+          <span>Multi-Camera Shoots</span><span class="separator">·</span>
+          <span>Motion Graphics & Animation</span><span class="separator">·</span>
+          <span>Social-First Content</span><span class="separator">·</span>
+          <span>Rapid Response Video</span><span class="separator">·</span>
+          <span>Graphic Design</span><span class="separator">·</span>
+          <span>Content Strategy</span><span class="separator">·</span>
+          <span>Distribution Strategy</span><span class="separator">·</span>
+          <span>Web Design & Development</span>
+        </div>
+      </div>
+
+      <div class="story" style="border-top: 1px solid rgba(26,26,26,0.1); padding-top: 2.5rem;">
+        <p><span class="highlight">In 2016, I founded Collective Agency along with a team of creatives from across the US.</span> CA was a full-service digital media agency built for organizations doing work that mattered. For six years I led strategy, creative direction, and production across video, social content, motion graphics, and rapid-response media.</p>
+        <p>The clients ranged from national nonprofits to political campaigns to Fortune 500 companies. The work ranged from multi-camera shoots to animated explainers to full content strategy. The range was enormous. What held it together was simple — we were a team who cared about the work because we cared about the missions behind it.</p>
+        <p>Building the agency taught me how to run a business, manage clients at scale, and deliver under relentless deadlines.</p>
+      </div>
+      <span class="era-tag">Collective Agency · 2016–2022</span>
+    </div>
+
+    <div class="col-right">
+      <p class="logo-grid-label">Selected Clients</p>
+      <div class="logo-grid">
+        <div class="logo-cell"><img src="assets/CA Client logos/waltdisney.jpg" alt="Walt Disney"></div>
+        <div class="logo-cell"><img src="assets/CA Client logos/bidenvictory.png" alt="Biden Victory Fund"></div>
+        <div class="logo-cell"><img src="assets/CA Client logos/MDA_logo-860x574.jpg" alt="Muscular Dystrophy Association"></div>
+        <div class="logo-cell"><img src="assets/CA Client logos/DLAPiper.png" alt="DLA Piper"></div>
+        <div class="logo-cell"><img src="assets/CA Client logos/edward jones.png" alt="Edward Jones"></div>
+        <div class="logo-cell"><img src="assets/CA Client logos/600px-US_Democratic_Party_Logo.jpg" alt="Democratic Party"></div>
+        <div class="logo-cell"><img src="assets/CA Client logos/Women's March Logo.png" alt="Women's March"></div>
+        <div class="logo-cell"><img src="assets/CA Client logos/marchforourlives.png" alt="March for Our Lives"></div>
+        <div class="logo-cell"><img src="assets/CA Client logos/ERA logo.png" alt="ERA Coalition"></div>
+        <div class="logo-cell"><img src="assets/CA Client logos/Indivisible Logo.png" alt="Indivisible"></div>
+        <div class="logo-cell"><img src="assets/CA Client logos/LetAmericaVote Logo.png" alt="Let America Vote"></div>
+        <div class="logo-cell"><img src="assets/CA Client logos/Swingleft.png" alt="Swing Left"></div>
+        <div class="logo-cell"><img src="assets/CA Client logos/ny-womens-foundation-logo.png" alt="New York Women's Foundation"></div>
+        <div class="logo-cell"><img src="assets/CA Client logos/Bricklogo.jpeg" alt="Brick Education"></div>
+        <div class="logo-cell"><img src="assets/CA Client logos/pccc-logo.png" alt="PCCC"></div>
+        <div class="logo-cell"><img src="assets/CA Client logos/ReformAustin.jpg" alt="Reform Austin"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="impact-section">
+    <p class="impact-label">The Agency</p>
+    <div class="impact-grid">
+      <div class="impact-item">
+        <div class="impact-stat">Founded & led for 6 years</div>
+        <div class="impact-desc">Full P&L ownership, client management, creative direction, and team leadership from startup to sustained operation</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-stat">Full-service production</div>
+        <div class="impact-desc">Video, graphic design, motion graphics, social content, rapid response, web development — all under one roof</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-stat">National reach</div>
+        <div class="impact-desc">Clients ranging from Fortune 500 companies to political campaigns to grassroots organizations</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-stat">Mission-driven by design</div>
+        <div class="impact-desc">Built the agency to serve organizations working toward collective good — the mission shaped every creative and technology decision we made</div>
+      </div>
+    </div>
+
+    <div class="press-row">
+      <span class="press-label-inline">Featured in</span>
+      <div class="press-logos">
+        <span class="press-logo">Fast Company</span>
+        <span class="press-logo">AdWeek</span>
+        <span class="press-logo">LA Times</span>
+        <span class="press-logo">Boston Globe</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="throughline-section">
+    <p class="throughline-text">
+      Mission-driven work kept asking the same question: how do you turn an audience into a community? The answer pushed us back to live, interactive production.
+    </p>
+    <a href="interactive.html" class="next-link">Next: Live Interactive Production →</a>
+  </section>
+
+</body>
+</html>
