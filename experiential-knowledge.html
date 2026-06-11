@@ -82,6 +82,41 @@
       padding-bottom: 52px;
     }
 
+    .im-tooltip {
+      position: relative;
+      cursor: default;
+    }
+    .im-tooltip::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: 140%;
+      left: 0;
+      width: max-content;
+      max-width: 280px;
+      padding: 10px 14px;
+      background: #0d0d0d;
+      color: #ece6da;
+      border: 1px solid var(--gold-line);
+      border-radius: 6px;
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      line-height: 1.5;
+      letter-spacing: normal;
+      text-transform: none;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(4px);
+      transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+      pointer-events: none;
+      z-index: 50;
+    }
+    .im-tooltip:hover::after {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
 
     .thesis-p {
       font-family: var(--serif);
@@ -2061,7 +2096,7 @@
     .person-story {
       max-width: 740px;
       margin: 0 auto;
-      padding: 52px 48px 0;
+      padding: 20px 48px 0;
       text-align: center;
     }
 
@@ -2071,6 +2106,17 @@
       font-size: clamp(1rem, 2vw, 1.25rem);
       line-height: 1.85;
       color: var(--muted);
+    }
+
+    .person-story-pitch {
+      background: var(--gold);
+      color: #070707;
+      font-weight: 600;
+      border-radius: 10px;
+      padding: 28px 34px;
+      margin-top: 80px;
+      text-align: left;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
     }
 
 
@@ -2234,7 +2280,7 @@
 <section>
   <div class="s-thesis">
 
-    <div class="thesis-eyebrow r">Insatiable Mind</div>
+    <div class="thesis-eyebrow r"><span class="im-tooltip" data-tooltip="For people who read deeply and travel to be transformed — and who want what they learn to keep shaping them.">Insatiable Mind</span></div>
 
     <div class="thesis-body">
       <p class="thesis-p fade-scroll" id="fadeP1" style="color:#ffffff !important; opacity:1;">
@@ -2661,6 +2707,7 @@
 
   <div class="person-story r">
     <p class="person-story-text">Insatiable Mind began as a personal passion project, inspired by Annie Murphy Paul's <a href="https://www.amazon.com/Thinking-Outside-Brain-Annie-Murphy/dp/0544947665" target="_blank" style="color: var(--gold); text-decoration: underline; text-underline-offset: 3px;"><em>The Extended Mind: The Power of Thinking Outside the Brain</em></a>. Built out of the thrill of learning and the desire to retain what I've learned, to connect it to other things I've read, other places I've been, other ideas still forming. An antidote to the specific frustration of closing a book that changed how I think, and feeling it slip away before I've even left the chair.</p>
+    <p class="person-story-text person-story-pitch">Insatiable Mind is for people who love to read and read deeply and who travel to be transformed, and who want what they learn to keep shaping them. Most tools capture ideas and memories and file them away. Insatiable Mind keeps your books, your experiences, your insights alive and evolving so that the ideas and experiences that changed you in the past continue to collide and interact with one another in the present. Every day.</p>
   </div>
 </section>
 
