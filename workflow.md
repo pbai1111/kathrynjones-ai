@@ -4,12 +4,12 @@
 
 | Page | File | Category | Status |
 |------|------|----------|--------|
-| Landing | `index.html` | — | Content complete, timeline + skills live |
+| Landing | `index.html` | — | Content complete, timeline + skills live; 2026 entry branded InsatiableMind.AI |
 | Experiential & Interactive Media | `theater.html` | Leading Cross-Functional Teams... | Content complete, videos embedded, Featured In added |
 | Full-Service Agency Leadership | `agency.html` | Leading Cross-Functional Teams... | Content complete, client logos live |
 | Live Production & Audience Engagement | `interactive.html` | Leading Cross-Functional Teams... | Content complete, video embedded |
 | AI Workflow Systems & Creative Operations | `ai-systems.html` | Applied AI. Operationalized. | Content complete, flip cards live |
-| Experiential Knowledge Design | `experiential-knowledge.html` | — | Separate design system (InsatiableMind) — do not touch styling |
+| Experiential Knowledge Design | `experiential-knowledge.html` | — | Separate design system (InsatiableMind) — do not touch shared styling; has gold elevator-pitch box + CSS title tooltip |
 
 ---
 
@@ -104,6 +104,8 @@ This is the **corporate version** of the site, repositioned from projectbased.ai
 - [x] Agency page reframed as "Full-Service Agency Leadership" with P&L and scale emphasis
 - [x] Interactive page reframed as "Live Production & Audience Engagement" with operational design framing
 - [x] AI systems page reframed as "AI Workflow Systems & Creative Operations"
+- [x] 2026 timeline entry rebranded to InsatiableMind.AI (headline + audience-focused description; Met audio-tour proof point retained)
+- [x] experiential-knowledge.html: gold elevator-pitch box added to bio, tightened bio top spacing, pure-CSS hover tooltip on "Insatiable Mind" title
 
 ---
 
