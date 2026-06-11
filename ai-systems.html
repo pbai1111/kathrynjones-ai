@@ -19,6 +19,7 @@
   .case-card {
     perspective: 1000px;
     height: 320px;
+    cursor: pointer;
   }
 
   .case-card-inner {
@@ -29,7 +30,7 @@
     transform-style: preserve-3d;
   }
 
-  .case-card:hover .case-card-inner {
+  .case-card.is-flipped .case-card-inner {
     transform: rotateY(180deg);
   }
 
@@ -125,7 +126,16 @@
     font-size: 0.65rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.6);
+    margin-top: auto;
+  }
+
+  .flip-hint-back {
+    font-weight: 300;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(90,38,80,0.55);
     margin-top: auto;
   }
 
@@ -133,11 +143,11 @@
     .card-grid { grid-template-columns: 1fr; }
     .case-card { height: auto; perspective: none; }
     .case-card-inner { transform-style: flat; }
-    .case-card:hover .case-card-inner { transform: none; }
+    .case-card.is-flipped .case-card-inner { transform: none; }
     .case-card-front, .case-card-back { position: static; backface-visibility: visible; transform: none; height: auto; }
     .case-card-back { border-radius: 0 0 6px 6px; }
     .case-card-front { border-radius: 6px 6px 0 0; border-bottom: none; }
-    .flip-hint { display: none; }
+    .flip-hint, .flip-hint-back { display: none; }
     .case-card-title { font-size: 1.1rem; margin-bottom: 0.3rem; }
   }
 </style>
@@ -194,7 +204,7 @@
             <span class="case-label">Result</span>
             <p class="case-result">Delivered broadcast-quality video across compressed timelines and budgets. Deployed across independent clients and as part of the <a href="https://www.sageworx.com/" target="_blank" rel="noopener" style="color:#fff; text-decoration:underline;">SGWX production team</a>.</p>
           </div>
-          <span class="flip-hint">Hover for details →</span>
+          <span class="flip-hint">↺ Click for problem / solution</span>
         </div>
         <div class="case-card-back">
           <div class="case-section">
@@ -205,6 +215,7 @@
             <span class="case-label">Solution</span>
             <p class="case-text">AI-native video production from storyboard to final cut. A fundamentally different workflow delivering broadcast-quality output at a fraction of the cost and timeline.</p>
           </div>
+          <span class="flip-hint-back">← flip back</span>
         </div>
       </div>
     </div>
@@ -217,7 +228,7 @@
             <span class="case-label">Result</span>
             <p class="case-result">Project briefs that required days to build now generate in minutes. Errors eliminated. Staff capacity recovered for higher-value work.</p>
           </div>
-          <span class="flip-hint">Hover for details →</span>
+          <span class="flip-hint">↺ Click for problem / solution</span>
         </div>
         <div class="case-card-back">
           <div class="case-section">
@@ -228,6 +239,7 @@
             <span class="case-label">Solution</span>
             <p class="case-text">Designed and deployed an automated system that pulls historical data and generates ready-to-use briefing documents — replacing a multi-day manual process.</p>
           </div>
+          <span class="flip-hint-back">← flip back</span>
         </div>
       </div>
     </div>
@@ -240,7 +252,7 @@
             <span class="case-label">Result</span>
             <p class="case-result">Analytics that required hours of manual data pulls now run automatically, surfacing insights the manual process missed entirely. Built to scale across teams.</p>
           </div>
-          <span class="flip-hint">Hover for details →</span>
+          <span class="flip-hint">↺ Click for problem / solution</span>
         </div>
         <div class="case-card-back">
           <div class="case-section">
@@ -251,6 +263,7 @@
             <span class="case-label">Solution</span>
             <p class="case-text">Built an automated pipeline that pulls data from all platforms, normalizes inconsistent formats, and generates performance insights — replacing weekly manual workflows.</p>
           </div>
+          <span class="flip-hint-back">← flip back</span>
         </div>
       </div>
     </div>
@@ -263,7 +276,7 @@
             <span class="case-label">Result</span>
             <p class="case-result">2+ years of performance data analyzed in hours, not weeks. Uncovered the actual problem: the content had never built an organic audience. Reframed the strategy from recovery to first-time growth.</p>
           </div>
-          <span class="flip-hint">Hover for details →</span>
+          <span class="flip-hint">↺ Click for problem / solution</span>
         </div>
         <div class="case-card-back">
           <div class="case-section">
@@ -274,6 +287,7 @@
             <span class="case-label">Solution</span>
             <p class="case-text">Deployed AI to analyze 2+ years of cross-platform performance data — analysis that would have taken a team weeks of manual work. The finding: the content had never established an organic audience base. Reframed the entire strategic approach from recovery to first-time audience development.</p>
           </div>
+          <span class="flip-hint-back">← flip back</span>
         </div>
       </div>
     </div>
@@ -286,7 +300,7 @@
             <span class="case-label">Result</span>
             <p class="case-result">Automated hours of production labor: transcript searching, tagging, paper edits, music sourcing. Recovered that time for strategic and creative decision-making.</p>
           </div>
-          <span class="flip-hint">Hover for details →</span>
+          <span class="flip-hint">↺ Click for problem / solution</span>
         </div>
         <div class="case-card-back">
           <div class="case-section">
@@ -297,6 +311,7 @@
             <span class="case-label">Solution</span>
             <p class="case-text">Built AI tools to handle operational production tasks: transcript search, quote organization, music prompting, metadata tagging. What remained was the strategic and creative work: selecting 26 quotes from 120+, shaping the narrative, editing the final product.</p>
           </div>
+          <span class="flip-hint-back">← flip back</span>
         </div>
       </div>
     </div>
@@ -308,6 +323,15 @@
     <p class="throughline-text">The final chapter takes this principle to its furthest conclusion.</p>
     <a href="experiential-knowledge.html" class="next-link">Next: AI-Powered Knowledge Systems →</a>
   </section>
+
+  <script>
+    document.querySelectorAll('.case-card').forEach(function (card) {
+      card.addEventListener('click', function (e) {
+        if (e.target.closest('a')) return;
+        card.classList.toggle('is-flipped');
+      });
+    });
+  </script>
 
 </body>
 </html>
